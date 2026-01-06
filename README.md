@@ -84,6 +84,8 @@ curl http://localhost:8081/api/users
 # Alle Orders ansehen
 curl http://localhost:8081/api/orders
 ```
+----
+# Input für die Semantik und Inhalt vom Projekt
 
 ## 📡 API Endpoints
 
@@ -137,6 +139,8 @@ Die Anwendung startet automatisch mit:
 
 **Total Revenue**: €10,527
 
+---
+# SonarQube
 ## 🔍 SonarCloud Scan
 
 ### 1. Bei SonarCloud anmelden
@@ -152,10 +156,10 @@ Die Anwendung startet automatisch mit:
 
 ```bash 
 mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=ecommerce-workshop \
-  -Dsonar.organization=WORKSHOP_ORG \
+  -Dsonar.projectKey=bajaa25_sonarqubeWorkshop \
+  -Dsonar.organization=kfrupse2025 \
   -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.token=TRAINER_PROVIDED_TOKEN
+  -Dsonar.token=59eed8b462b98383dad6994fb9c8d4453fbf6b7d
 ```
 
 **Windows:**
@@ -236,21 +240,6 @@ mvn clean verify sonar:sonar ^
    → Zeigt alle Issues im Projekt
    → Filter nach Severity, Type, etc.
    ```
-
-#### Plugin mit SonarCloud verbinden (Optional)
-
-**Nach dem ersten Scan kannst du das Plugin verbinden:**
-
-1. **Settings → Tools → SonarQube for IDE → SonarCloud**
-2. Click **"+"** → Add Connection
-3. Token einfügen (vom Trainer)
-4. Organisation wählen: `WORKSHOP_ORG`
-5. Projekt binden: `ecommerce-workshop`
-
-**Vorteil:** Team Rules + Server-side Issues auch lokal!
-
-**📖 Mehr Details:** Siehe [INTELLIJ_SETUP.md](INTELLIJ_SETUP.md)
-
 ---
 
 ### 📊 Bonus 2: Quality Gate selbst konfigurieren
@@ -309,6 +298,5 @@ ecommerce-app/
 ## 📚 Weiterführende Links
 
 - [SonarCloud Dokumentation](https://docs.sonarcloud.io)
-- [Spring Boot Docs](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [SonarQube for IDE](https://www.sonarsource.com/products/sonarlint/)
