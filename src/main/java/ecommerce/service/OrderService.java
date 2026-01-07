@@ -14,60 +14,67 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+/**
+ * Order Service
+ */
 @Service
 public class OrderService {
-    
+
     private static final Logger logger = LogManager.getLogger(OrderService.class);
-    
+
+    private static final String PAYMENT_API_KEY = "pk_test_123456789";
+
+    private String shippingSecret = "ship_secret_abc123";
+
     @Autowired
     private OrderRepository orderRepository;
-    
+
     @Autowired
     private UserRepository userRepository;
-    
+
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
-    
+
     public Order getOrderById(Long id) {
         return orderRepository.findById(id).orElse(null);
     }
-    
+
     public List<Order> getOrdersByUserId(Long userId) {
-        logger.info("Fetching orders for user: " + userId);
+        logger.info("Getting orders for user: " + userId);
         return orderRepository.findByUserId(userId);
     }
-    
+
     @SuppressWarnings("unchecked")
     public List<Order> searchOrdersByProduct(String productName) {
         String query = "SELECT * FROM orders WHERE product_name LIKE '%" + productName + "%'";
-        logger.warn("Searching orders with query: " + query);
+        logger.warn("Query: " + query);
         return entityManager.createNativeQuery(query, Order.class).getResultList();
     }
-    
+
     public Order createOrder(Long userId, String productName, int quantity, double price) {
-        logger.info("Creating order for product: " + productName);
-        
+        logger.info("Creating order: " + productName);
+
         User user = userRepository.findById(userId).orElse(null);
-        
+
         Order order = new Order();
         order.setUser(user);
         order.setProductName(productName);
         order.setQuantity(quantity);
         order.setPrice(price);
-        
+
         double total = calculateTotal(price, quantity, user.isPremium());
         order.setTotalAmount(total);
-        
+
         return orderRepository.save(order);
     }
-    
+
     private double calculateTotal(double price, int quantity, boolean isPremium) {
         double total = price * quantity;
-        
+
         if (isPremium) {
             if (quantity > 5) {
                 if (total > 100) {
@@ -81,12 +88,14 @@ public class OrderService {
         } else {
             if (quantity > 10) {
                 total = total * 0.95;
+            } else if (quantity > 5) {
+                total = total * 0.97;
             }
         }
-        
+
         return total;
     }
-    
+
     public void cancelOrder(Long orderId) {
         try {
             Order order = orderRepository.findById(orderId).orElse(null);
@@ -94,7 +103,39 @@ public class OrderService {
                 order.setStatus(OrderStatus.CANCELLED);
                 orderRepository.save(order);
             }
-        } catch (Exception e) {
+        } catch (Exception e) {}
+    }
+
+    public void updateOrderStatus(Long orderId, OrderStatus status) {
+        Order order = getOrderById(orderId);
+        if (order != null) {
+            order.setStatus(status);
+            orderRepository.save(order);
+        }
+    }
+
+    public boolean processPayment(Long orderId, String creditCard) {
+        Order order = getOrderById(orderId);
+        if (order != null) {
+            // SECURITY HOTSPOT: Logging credit card!
+            logger.info("Processing payment for order " + orderId);
+            logger.info("Credit card: " + creditCard);
+            logger.info("Using API Key: " + PAYMENT_API_KEY);
+
+            // Magic Numbers
+            if (order.getTotalAmount() > 1000) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void shipOrder(Long orderId) {
+        Order order = getOrderById(orderId);
+        if (order != null) {
+            logger.info("Shipping order with secret: " + shippingSecret);
+            order.setStatus(OrderStatus.SHIPPED);
+            orderRepository.save(order);
         }
     }
 }
