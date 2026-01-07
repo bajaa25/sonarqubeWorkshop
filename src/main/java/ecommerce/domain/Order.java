@@ -1,4 +1,4 @@
-package com.example.ecommerce.model;
+package ecommerce.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

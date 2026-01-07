@@ -193,11 +193,7 @@ mvn clean verify sonar:sonar ^
 
 #### Installation
 
-1. **IntelliJ IDEA herunterladen**
-   - [Download Community Edition](https://www.jetbrains.com/idea/download/) (kostenlos)
-   - Oder Ultimate Edition (30-Tage Trial)
-
-2. **SonarQube for IDE Plugin installieren**
+1. **SonarQube for IDE Plugin installieren**
    ```
    IntelliJ öffnen
    → File → Settings → Plugins (Windows/Linux)
@@ -206,7 +202,7 @@ mvn clean verify sonar:sonar ^
    → Install → IntelliJ neu starten
    ```
 
-3. **Projekt öffnen**
+2. **Projekt öffnen**
    ```bash
    # Im Terminal
    cd ecommerce-app
@@ -215,7 +211,7 @@ mvn clean verify sonar:sonar ^
    # Oder: IntelliJ → Open → ecommerce-app Ordner wählen
    ```
 
-4. **Warte auf Indexierung**
+3. **Warte auf Indexierung**
    - Unten rechts: "Indexing..." muss fertig sein
    - Kann 2-5 Minuten dauern
 
@@ -244,9 +240,6 @@ mvn clean verify sonar:sonar ^
 
 ### 📊 Bonus 2: Quality Gate selbst konfigurieren
 
-**Schwierigkeit:** ⭐⭐ (Medium)  
-**Zeit:** 10 Minuten
-
 1. **SonarCloud → Quality Gates**
 2. **Eigenes Gate erstellen:** "Workshop-Gate"
 3. **Bedingungen hinzufügen:**
@@ -264,7 +257,6 @@ mvn clean verify sonar:sonar ^
 
 ---
 
-
 ## 📂 Projekt-Struktur
 
 ```
@@ -274,25 +266,25 @@ ecommerce-app/
 │   ├── main/
 │   │   ├── java/com/example/ecommerce/
 │   │   │   ├── Application.java                # Main
-│   │   │   ├── controller/
-│   │   │   │   ├── UserController.java         # User API
-│   │   │   │   └── OrderController.java        # Order API
-│   │   │   ├── service/
-│   │   │   │   ├── UserService.java            # Business Logic
+│   │   │   ├── controller/                     # Presentation
+│   │   │   │   ├── UserController.java         
+│   │   │   │   └── OrderController.java        
+│   │   │   ├── service/                        # Business
+│   │   │   │   ├── UserService.java            
 │   │   │   │   └── OrderService.java
-│   │   │   ├── repository/
-│   │   │   │   ├── UserRepository.java         # Data Access
+│   │   │   ├── repository/                     # Persistance
+│   │   │   │   ├── UserRepository.java         
 │   │   │   │   └── OrderRepository.java
-│   │   │   └── model/
-│   │   │       ├── User.java                   # Entity
+│   │   │   └── domain/                         # Domain/Entity
+│   │   │       ├── User.java                   
 │   │   │       ├── Order.java
 │   │   │       └── OrderStatus.java            # Enum
 │   │   └── resources/
 │   │       ├── application.properties          # Config
 │   │       └── import.sql                      # Demo Data
 │   └── test/
-│       └── java/                               # (Tests optional)
-└── README.md                                   # Diese Datei
+│       └── java/                               # Tests
+└── README.md                                   
 ```
 
 ## 📚 Weiterführende Links

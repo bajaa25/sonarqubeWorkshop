@@ -1,7 +1,7 @@
-package com.example.ecommerce.service;
+package ecommerce.service;
 
-import com.example.ecommerce.model.User;
-import com.example.ecommerce.repository.UserRepository;
+import ecommerce.domain.User;
+import ecommerce.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

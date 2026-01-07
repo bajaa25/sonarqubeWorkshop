@@ -36,6 +36,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Copy Dependencies
+        run: mvn dependency:copy-dependencies -DoutputDirectory=target/dependency
+
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,4 +48,5 @@ jobs:
             -Dsonar.projectKey=bajaa25_ECommerceShop \
             -Dsonar.organization=kfrupse2025 \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.java.binaries=target/classes
+            -Dsonar.java.binaries=target/classes \
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml

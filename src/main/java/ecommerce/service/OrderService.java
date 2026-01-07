@@ -1,10 +1,10 @@
-package com.example.ecommerce.service;
+package ecommerce.service;
 
-import com.example.ecommerce.model.Order;
-import com.example.ecommerce.model.OrderStatus;
-import com.example.ecommerce.model.User;
-import com.example.ecommerce.repository.OrderRepository;
-import com.example.ecommerce.repository.UserRepository;
+import ecommerce.domain.Order;
+import ecommerce.domain.OrderStatus;
+import ecommerce.domain.User;
+import ecommerce.repository.OrderRepository;
+import ecommerce.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

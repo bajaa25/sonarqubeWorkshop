@@ -1,4 +1,4 @@
-package com.example.ecommerce.model;
+package ecommerce.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;

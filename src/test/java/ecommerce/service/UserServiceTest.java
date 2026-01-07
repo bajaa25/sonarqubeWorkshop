@@ -1,7 +1,7 @@
-package com.example.ecommerce.service;
+package ecommerce.service;
 
-import com.example.ecommerce.model.User;
-import com.example.ecommerce.repository.UserRepository;
+import ecommerce.domain.User;
+import ecommerce.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

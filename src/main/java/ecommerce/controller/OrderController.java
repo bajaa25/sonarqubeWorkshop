@@ -1,7 +1,7 @@
-package com.example.ecommerce.controller;
+package ecommerce.controller;
 
-import com.example.ecommerce.model.Order;
-import com.example.ecommerce.service.OrderService;
+import ecommerce.domain.Order;
+import ecommerce.service.OrderService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
