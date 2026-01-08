@@ -38,7 +38,6 @@ public class UserService {
     }
 
     public User getUserByEmail(String email) {
-        // SECURITY HOTSPOT: Logging sensitive data (email)
         logger.info("Looking up user: " + email);
         return userRepository.findByEmail(email);
     }
@@ -136,7 +135,6 @@ public class UserService {
         User user = getUserById(userId);
         if (user != null) {
             String message = "Welcome " + user.getFirstName() + "!";
-            // SECURITY HOTSPOT: Logging sensitive email
             logger.info("Sending email to: " + user.getEmail());
             logger.info("Message: " + message);
         }

@@ -117,12 +117,10 @@ public class OrderService {
     public boolean processPayment(Long orderId, String creditCard) {
         Order order = getOrderById(orderId);
         if (order != null) {
-            // SECURITY HOTSPOT: Logging credit card!
             logger.info("Processing payment for order " + orderId);
             logger.info("Credit card: " + creditCard);
             logger.info("Using API Key: " + PAYMENT_API_KEY);
 
-            // Magic Numbers
             if (order.getTotalAmount() > 1000) {
                 return true;
             }

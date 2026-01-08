@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Application Configuration
- * 
- * SECURITY HOTSPOTS: Unsichere Konfiguration!
  */
 @Configuration
 public class AppConfig {

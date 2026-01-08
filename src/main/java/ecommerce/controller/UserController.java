@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/users") //BASE URL: Prefix for all Endpoint-Links down below -> e.g. /api/users/{id}
 public class UserController {
 
     private static final Logger logger = LogManager.getLogger(UserController.class);
@@ -19,13 +19,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
+    @GetMapping //URL: /api/users
     public List<User> getAllUsers() {
         logger.info("Getting all users");
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") //URL: /api/users/{id}
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         logger.info("Getting user: " + id);
         User user = userService.getUserById(id);
@@ -33,7 +33,6 @@ public class UserController {
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
-
         return ResponseEntity.ok(user);
     }
 

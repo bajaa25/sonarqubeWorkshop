@@ -15,7 +15,7 @@ import java.util.List;
  * Order Controller
  */
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/api/orders") //BASE URL: Prefix for all Endpoint-Links down below -> e.g. /api/orders/{id}
 public class OrderController {
 
     private static final Logger logger = LogManager.getLogger(OrderController.class);
@@ -23,13 +23,13 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping
+    @GetMapping //URL: /api/orders
     public List<Order> getAllOrders() {
         logger.info("Getting all orders");
         return orderService.getAllOrders();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") //URL: /api/orders/{id}
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
         logger.info("Getting order: " + id);
         Order order = orderService.getOrderById(id);
@@ -41,7 +41,7 @@ public class OrderController {
         return ResponseEntity.ok(order);
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/user/{userId}") //URL: /api/orders/user/{userId}
     public List<Order> getOrdersByUserId(@PathVariable Long userId) {
         logger.info("Orders for user: " + userId);
         return orderService.getOrdersByUserId(userId);
@@ -73,9 +73,6 @@ public class OrderController {
         return ResponseEntity.ok("Order cancelled");
     }
 
-    /**
-     * RESPONSIBILITY: Business Logic im Controller!
-     */
     @GetMapping("/statistics")
     public ResponseEntity<String> getStatistics() {
         List<Order> orders = orderService.getAllOrders();
@@ -102,18 +99,12 @@ public class OrderController {
         return ResponseEntity.ok(stats);
     }
 
-    /**
-     * SECURITY HOTSPOT: Payment endpoint without validation
-     * RESPONSIBILITY: Payment logic in controller
-     */
     @PostMapping("/{id}/payment")
     public ResponseEntity<String> processPayment(
             @PathVariable Long id,
             @RequestParam String creditCard,
             @RequestParam String cvv) {
 
-        // SECURITY HOTSPOT: No input validation!
-        // SECURITY HOTSPOT: Logging payment details
         logger.info("Payment for order " + id);
         logger.info("Card: " + creditCard + ", CVV: " + cvv);
 
@@ -126,9 +117,6 @@ public class OrderController {
         return ResponseEntity.badRequest().body("Payment failed");
     }
 
-    /**
-     * SECURITY HOTSPOT: Admin endpoint without authentication
-     */
     @PostMapping("/{id}/force-ship")
     public ResponseEntity<String> forceShip(@PathVariable Long id) {
         // No authentication check!
@@ -137,9 +125,6 @@ public class OrderController {
     }
 }
 
-/**
- * RESPONSIBILITY: Data Clump
- */
 class CreateOrderRequest {
     private Long userId;
     private String productName;
