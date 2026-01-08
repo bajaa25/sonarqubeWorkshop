@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+      - 01_Bug-Fixing_&_Vulnerabilities
+      - 02_Code_Smells
+      - 03_Test_Coverage
+      - 04_Other
   pull_request:
     types: [opened, synchronize, reopened]
 
