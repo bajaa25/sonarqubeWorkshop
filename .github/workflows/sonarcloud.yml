@@ -7,6 +7,7 @@ on:
       - 02_Code_Smells
       - 03_Test_Coverage
       - 04_Other
+      - Fixed
   pull_request:
     types: [opened, synchronize, reopened]
 
