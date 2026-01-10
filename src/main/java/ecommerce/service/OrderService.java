@@ -71,7 +71,7 @@ public class OrderService {
         order.setQuantity(quantity);
         order.setPrice(price);
 
-        double total = calculateTotal(price, quantity, user.isPremium() || false);
+        double total = calculateTotal(price, quantity, user.isPremium());
         order.setTotalAmount(total);
 
         return orderRepository.save(order);
