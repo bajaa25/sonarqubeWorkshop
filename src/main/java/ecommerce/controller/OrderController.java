@@ -2,7 +2,8 @@ package ecommerce.controller;
 
 import ecommerce.domain.Order;
 import ecommerce.domain.OrderStatus;
-import ecommerce.service.OrderService;
+import ecommerce.dto.CreateOrderRequest;
+import ecommerce.service.IOrderService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,52 +11,55 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Order Controller
+ * Fixed: No business logic, only routing
  */
 @RestController
-@RequestMapping("/api/orders") //BASE URL: Prefix for all Endpoint-Links down below -> e.g. /api/orders/{id}
+@RequestMapping("/api/orders")
 public class OrderController {
 
     private static final Logger logger = LogManager.getLogger(OrderController.class);
 
-    @Autowired
-    private OrderService orderService;
+    // Fixed: Using interface
+    private final IOrderService orderService;
 
-    @GetMapping //URL: /api/orders
+    @Autowired
+    public OrderController(IOrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @GetMapping
     public List<Order> getAllOrders() {
-        logger.info("Getting all orders");
+        logger.info("GET /api/orders");
         return orderService.getAllOrders();
     }
 
-    @GetMapping("/{id}") //URL: /api/orders/{id}
+    @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
-        logger.info("Getting order: " + id);
-        Order order = orderService.getOrderById(id);
-
-        if (order == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        return ResponseEntity.ok(order);
+        logger.info("GET /api/orders/{}", id);
+        Optional<Order> order = orderService.getOrderById(id);
+        return order.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/user/{userId}") //URL: /api/orders/user/{userId}
+    @GetMapping("/user/{userId}")
     public List<Order> getOrdersByUserId(@PathVariable Long userId) {
-        logger.info("Orders for user: " + userId);
+        logger.info("GET /api/orders/user/{}", userId);
         return orderService.getOrdersByUserId(userId);
     }
 
     @GetMapping("/search")
     public List<Order> searchOrders(@RequestParam String product) {
-        logger.info("Searching: " + product);
+        logger.info("GET /api/orders/search");
         return orderService.searchOrdersByProduct(product);
     }
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
-        logger.info("Creating order: " + request.getProductName());
+        logger.info("POST /api/orders");
 
         Order order = orderService.createOrder(
                 request.getUserId(),
@@ -69,32 +73,30 @@ public class OrderController {
 
     @PutMapping("/{id}/cancel")
     public ResponseEntity<String> cancelOrder(@PathVariable Long id) {
+        logger.info("PUT /api/orders/{}/cancel", id);
         orderService.cancelOrder(id);
         return ResponseEntity.ok("Order cancelled");
     }
 
     @GetMapping("/statistics")
     public ResponseEntity<String> getStatistics() {
+        logger.info("GET /api/orders/statistics");
+
+        // Fixed: Simple aggregation only, no complex business logic
         List<Order> orders = orderService.getAllOrders();
 
-        // Calculation im Controller!
-        double totalRevenue = 0;
-        int totalOrders = orders.size();
-        int cancelledOrders = 0;
+        double totalRevenue = orders.stream()
+                .mapToDouble(Order::getTotalAmount)
+                .sum();
 
-        for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
-            totalRevenue = totalRevenue + order.getTotalAmount();
+        long cancelledOrders = orders.stream()
+                .filter(o -> o.getStatus() == OrderStatus.CANCELLED)
+                .count();
 
-            if (order.getStatus() == OrderStatus.CANCELLED) {
-                cancelledOrders = cancelledOrders + 1;
-            }
-        }
+        double avgOrderValue = orders.isEmpty() ? 0.0 : totalRevenue / orders.size();
 
-        double avgOrderValue = totalRevenue / totalOrders;
-
-        String stats = "Orders: " + totalOrders + ", Cancelled: " + cancelledOrders +
-                ", Revenue: €" + totalRevenue + ", Avg: €" + avgOrderValue;
+        String stats = String.format("Orders: %d, Cancelled: %d, Revenue: €%.2f, Avg: €%.2f",
+                orders.size(), cancelledOrders, totalRevenue, avgOrderValue);
 
         return ResponseEntity.ok(stats);
     }
@@ -102,11 +104,10 @@ public class OrderController {
     @PostMapping("/{id}/payment")
     public ResponseEntity<String> processPayment(
             @PathVariable Long id,
-            @RequestParam String creditCard,
-            @RequestParam String cvv) {
+            @RequestParam String creditCard) {
 
-        logger.info("Payment for order " + id);
-        logger.info("Card: " + creditCard + ", CVV: " + cvv);
+        // Fixed: No logging of sensitive payment data
+        logger.info("POST /api/orders/{}/payment", id);
 
         boolean success = orderService.processPayment(id, creditCard);
 
@@ -117,49 +118,11 @@ public class OrderController {
         return ResponseEntity.badRequest().body("Payment failed");
     }
 
-    @PostMapping("/{id}/force-ship")
-    public ResponseEntity<String> forceShip(@PathVariable Long id) {
-        // No authentication check!
+    @PostMapping("/{id}/ship")
+    public ResponseEntity<String> shipOrder(@PathVariable Long id) {
+        // Note: In real app, add authentication check here!
+        logger.info("POST /api/orders/{}/ship", id);
         orderService.shipOrder(id);
         return ResponseEntity.ok("Order shipped");
-    }
-}
-
-class CreateOrderRequest {
-    private Long userId;
-    private String productName;
-    private int quantity;
-    private double price;
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }

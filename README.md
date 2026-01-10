@@ -140,48 +140,6 @@ Die Anwendung startet automatisch mit:
 **Total Revenue**: €10,527
 
 ---
-# SonarQube
-## 🔍 SonarCloud Scan
-
-### 1. Bei SonarCloud anmelden
-
-1. Gehe zu [sonarcloud.io](https://sonarcloud.io)
-2. Click **"Log in"**
-3. Wähle **"Sign in with GitHub"**
-4. **Nutze die Workshop-Zugangsdaten** (siehe oben)
-
-### 2. Projekt analysieren
-
-**Token vom Trainer erhalten** und dann:
-
-```bash 
-mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=bajaa25_sonarqubeWorkshop \
-  -Dsonar.organization=kfrupse2025 \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.token=59eed8b462b98383dad6994fb9c8d4453fbf6b7d
-```
-
-**Windows:**
-```cmd
-mvn clean verify sonar:sonar ^
-  -Dsonar.projectKey=ecommerce-workshop ^
-  -Dsonar.organization=WORKSHOP_ORG ^
-  -Dsonar.host.url=https://sonarcloud.io ^
-  -Dsonar.token=TRAINER_PROVIDED_TOKEN
-```
-
-**MacOS:**
-```TBD```
-
-### 3. Ergebnisse ansehen
-
-1. Scan läuft (~2-3 Minuten)
-2. Öffne: https://sonarcloud.io
-3. Navigiere zu deinem Projekt
-4. Erkunde: Issues, Security Hotspots, Code Smells
-
----
 
 ## 🎁 BONUS - Für schnelle Teilnehmer
 

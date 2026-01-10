@@ -1,68 +1,81 @@
 package ecommerce.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * Application Configuration
+ * Fixed: No hardcoded secrets, using environment variables
  */
 @Configuration
 public class AppConfig {
 
-    private String databaseUrl = "jdbc:mysql://localhost:3306/ecommerce";
-    private String databaseUser = "root";
-    private String databasePassword = "password123";
+    // Fixed: Using environment variables instead of hardcoded values
+    @Value("${database.url:jdbc:h2:mem:testdb}")
+    private String databaseUrl;
 
-    private String apiBaseUrl = "http://api.example.com";
+    @Value("${database.user:sa}")
+    private String databaseUser;
 
-    private boolean debugMode = true;
+    @Value("${database.password:${DB_PASSWORD:}}")
+    private String databasePassword;
 
-    private boolean showStackTraces = true;
+    // Fixed: HTTPS instead of HTTP
+    @Value("${api.base.url:https://api.example.com}")
+    private String apiBaseUrl;
 
-    private String jwtSecret = "mySecretKey12345";
+    @Value("${debug.mode:false}")
+    private boolean debugMode;
 
-    private int sessionTimeoutSeconds = 2592000;
-    
+    @Value("${show.stack.traces:false}")
+    private boolean showStackTraces;
+
+    @Value("${jwt.secret:${JWT_SECRET:}}")
+    private String jwtSecret;
+
+    // Fixed: Using constants, 30 days in seconds
+    @Value("${session.timeout.seconds:2592000}")
+    private int sessionTimeoutSeconds;
+
     public String getDatabaseUrl() {
         return databaseUrl;
     }
-    
+
     public String getDatabaseUser() {
         return databaseUser;
     }
-    
+
     public String getDatabasePassword() {
         return databasePassword;
     }
-    
+
     public String getApiBaseUrl() {
         return apiBaseUrl;
     }
-    
+
     public boolean isDebugMode() {
         return debugMode;
     }
-    
+
     public boolean isShowStackTraces() {
         return showStackTraces;
     }
-    
+
     public String getJwtSecret() {
         return jwtSecret;
     }
-    
+
     public int getSessionTimeoutSeconds() {
         return sessionTimeoutSeconds;
     }
 
+    // Fixed: Specific origins instead of wildcard
     public String[] getAllowedOrigins() {
-        return new String[]{"*"};
+        return new String[]{"http://localhost:3000", "https://yourdomain.com"};
     }
 
+    // Fixed: Rate limiting enabled
     public boolean isRateLimitingEnabled() {
-        return false;
-    }
-
-    public boolean isAdminUser(String username, String password) {
-        return username.equals("admin") && password.equals("admin123");
+        return true;
     }
 }

@@ -1,7 +1,8 @@
 package ecommerce.controller;
 
 import ecommerce.domain.User;
-import ecommerce.service.UserService;
+import ecommerce.dto.CreateUserRequest;
+import ecommerce.service.IUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,145 +10,120 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
+/**
+ * User Controller
+ * Fixed: No business logic, only routing and delegation to service
+ */
 @RestController
-@RequestMapping("/api/users") //BASE URL: Prefix for all Endpoint-Links down below -> e.g. /api/users/{id}
+@RequestMapping("/api/users")
 public class UserController {
 
     private static final Logger logger = LogManager.getLogger(UserController.class);
 
-    @Autowired
-    private UserService userService;
+    // Fixed: Using interface instead of concrete class
+    private final IUserService userService;
 
-    @GetMapping //URL: /api/users
+    @Autowired
+    public UserController(IUserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping
     public List<User> getAllUsers() {
-        logger.info("Getting all users");
+        logger.info("GET /api/users");
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{id}") //URL: /api/users/{id}
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        logger.info("Getting user: " + id);
-        User user = userService.getUserById(id);
-
-        if (user == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(user);
+        logger.info("GET /api/users/{}", id);
+        Optional<User> user = userService.getUserById(id);
+        return user.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/search")
     public List<User> searchUsers(@RequestParam String email) {
-        logger.info("Searching: " + email);
+        logger.info("GET /api/users/search");
         return userService.searchUsersByEmail(email);
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        logger.info("Creating user: " + user.getEmail());
-        User created = userService.createUser(user);
+    public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
+        logger.info("POST /api/users");
+        User created = userService.createUser(createUserRequest);
         return ResponseEntity.ok(created);
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
-        if (user.getEmail() == null || !user.getEmail().contains("@")) {
-            return ResponseEntity.badRequest().body("Invalid email");
+    public ResponseEntity<String> register(@RequestBody CreateUserRequest createUserRequest) {
+        logger.info("POST /api/users/register");
+
+        if (!userService.validateUser(createUserRequest)) {
+            return ResponseEntity.badRequest().body("Invalid user data");
         }
 
-        if (user.getPassword() == null || user.getPassword().length() < 8) {
-            return ResponseEntity.badRequest().body("Password too short");
-        }
-
-        if (user.getFirstName() == null || user.getFirstName().length() < 2) {
-            return ResponseEntity.badRequest().body("First name required");
-        }
-
-        User created = userService.createUser(user);
+        User created = userService.createUser(createUserRequest);
         return ResponseEntity.ok("User registered: " + created.getId());
     }
-
 
     @GetMapping("/{id}/discount")
     public ResponseEntity<String> calculateDiscount(
             @PathVariable Long id,
             @RequestParam double amount) {
 
-        User user = userService.getUserById(id);
-        if (user == null) {
+        logger.info("GET /api/users/{}/discount", id);
+
+        Optional<User> userOpt = userService.getUserById(id);
+        if (userOpt.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
-        double discount = 0;
-        if (user.isPremium()) {
-            discount = amount * 0.1;
-        }
+        // Fixed: Business logic delegated to service
+        User user = userOpt.get();
+        double finalAmount = userService.calculateUserDiscount(user, amount);
+        double discount = amount - finalAmount;
 
-        double finalAmount = amount - discount;
-
-        String result = "Amount: €" + amount +
-                ", Discount: €" + discount +
-                ", Final: €" + finalAmount;
+        String result = String.format("Amount: €%.2f, Discount: €%.2f, Final: €%.2f",
+                amount, discount, finalAmount);
 
         return ResponseEntity.ok(result);
     }
 
     @GetMapping("/{id}/summary")
     public ResponseEntity<String> getUserSummary(@PathVariable Long id) {
-        User user = userService.getUserById(id);
+        logger.info("GET /api/users/{}/summary", id);
 
-        if (user == null) {
+        Optional<User> userOpt = userService.getUserById(id);
+        if (userOpt.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
-        String summary = "User: " + user.getFirstName() + " " + user.getLastName() + "\n" +
-                "Email: " + user.getEmail() + "\n" +
-                "Premium: " + (user.isPremium() ? "Yes" : "No") + "\n" +
-                "Orders: " + user.getOrders().size();
+        // Fixed: Formatting logic could be in service, but simple enough
+        User user = userOpt.get();
+        String summary = String.format("User: %s%nEmail: %s%nPremium: %s%nOrders: %d",
+                userService.getUserFullName(id),
+                user.getEmail(),
+                user.isPremium() ? "Yes" : "No",
+                user.getOrders().size());
 
         return ResponseEntity.ok(summary);
     }
 
     @GetMapping("/statistics")
     public ResponseEntity<String> getStatistics() {
-        List<User> users = userService.getAllUsers();
+        logger.info("GET /api/users/statistics");
 
-        int totalUsers = users.size();
-        int premiumUsers = 0;
-        int totalOrders = 0;
+        // Fixed: Statistics calculation delegated to service
+        int totalUsers = userService.getTotalUsers();
+        int premiumUsers = userService.getPremiumUserCount();
+        double avgOrders = userService.getAverageOrderCount();
 
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).isPremium()) {
-                premiumUsers = premiumUsers + 1;
-            }
-            totalOrders = totalOrders + users.get(i).getOrders().size();
-        }
-
-        double avgOrders = (double) totalOrders / totalUsers;
-
-        String stats = "Total: " + totalUsers + ", Premium: " + premiumUsers +
-                ", Avg Orders: " + avgOrders;
+        String stats = String.format("Total: %d, Premium: %d, Avg Orders: %.2f",
+                totalUsers, premiumUsers, avgOrders);
 
         return ResponseEntity.ok(stats);
-    }
-
-    @GetMapping("/debug")
-    public ResponseEntity<String> getDebugInfo() {
-        return ResponseEntity.ok(userService.getDebugInfo());
-    }
-
-    @PostMapping("/admin/reset-password")
-    public ResponseEntity<String> adminResetPassword(
-            @RequestParam String email,
-            @RequestParam String newPassword) {
-
-        User user = userService.getUserByEmail(email);
-        if (user != null) {
-            user.setPassword(newPassword);
-            userService.sendPasswordResetEmail(email, newPassword);
-            return ResponseEntity.ok("Password reset for: " + email);
-        }
-
-        return ResponseEntity.notFound().build();
     }
 }
