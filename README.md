@@ -6,8 +6,7 @@ Eine Spring Boot E-Commerce Anwendung für SonarCloud Quality & Security Worksho
 
 Nach diesem Workshop können Sie:
 
-✅ SonarCloud nutzen und verstehen  
-✅ CVEs in Dependencies erkennen  
+✅ SonarCloud nutzen und verstehen
 ✅ Security Hotspots identifizieren  
 ✅ Code Quality Metriken interpretieren  
 ✅ Technical Debt verstehen
@@ -20,11 +19,6 @@ Nach diesem Workshop können Sie:
 ### System Requirements
 - **JDK**: 11 oder höher
 - **Maven**: 3.6+ ([Download](https://maven.apache.org/download.cgi))
-
-### Kompatibilität
-✅ **Windows** (10, 11)  
-✅ **macOS** (10.15+)  
-✅ **Linux** (Ubuntu, Debian, Fedora, etc.)
 
 ### Installation prüfen
 
@@ -84,6 +78,45 @@ curl http://localhost:8081/api/users
 # Alle Orders ansehen
 curl http://localhost:8081/api/orders
 ```
+---
+
+## 📂 Projekt-Struktur
+
+```
+ecommerce-app/
+├── pom.xml                          # Maven Dependencies
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/ecommerce/
+│   │   │   ├── config/                     # Configuration
+│   │   │   │   ├── AppConfig.java         
+│   │   │   ├── controller/                     # Presentation
+│   │   │   │   ├── UserController.java         
+│   │   │   │   └── OrderController.java        
+│   │   │   ├── domain/                         # Domain/Entity
+│   │   │   │   ├── User.java                   
+│   │   │   │   ├── Order.java
+│   │   │   │   └── OrderStatus.java            # Enum
+│   │   │   ├── repository/                     # Persistance
+│   │   │   │   ├── UserRepository.java         
+│   │   │   │   └── OrderRepository.java
+│   │   │   ── service/                        # Business
+│   │   │   │   ├── UserService.java            
+│   │   │   │   └── OrderService.java
+│   │   │   ├── ECommerceShop.java              # Main
+│   │   └── resources/
+│   │       ├── application.properties          # Config
+│   │       └── import.sql                      # Demo Data
+│   └── test/
+│       └── java/                               # Tests
+└── README.md                                   
+```
+
+## 📚 Weiterführende Links
+- [SonarCloud Dokumentation](https://docs.sonarcloud.io)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [SonarQube for IDE](https://www.sonarsource.com/products/sonarlint/)
+
 ----
 # Input für die Semantik und Inhalt vom Projekt
 
@@ -140,46 +173,12 @@ Die Anwendung startet automatisch mit:
 **Total Revenue**: €10,527
 
 ---
-# SonarQube
-## 🔍 SonarCloud Scan
-
-### 1. Bei SonarCloud anmelden
+# SonarQube SonarCloud login
 
 1. Gehe zu [sonarcloud.io](https://sonarcloud.io)
 2. Click **"Log in"**
 3. Wähle **"Sign in with GitHub"**
 4. **Nutze die Workshop-Zugangsdaten** (siehe oben)
-
-### 2. Projekt analysieren
-
-**Token vom Trainer erhalten** und dann:
-
-```bash 
-mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=bajaa25_sonarqubeWorkshop \
-  -Dsonar.organization=kfrupse2025 \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.token=59eed8b462b98383dad6994fb9c8d4453fbf6b7d
-```
-
-**Windows:**
-```cmd
-mvn clean verify sonar:sonar ^
-  -Dsonar.projectKey=ecommerce-workshop ^
-  -Dsonar.organization=WORKSHOP_ORG ^
-  -Dsonar.host.url=https://sonarcloud.io ^
-  -Dsonar.token=TRAINER_PROVIDED_TOKEN
-```
-
-**MacOS:**
-```TBD```
-
-### 3. Ergebnisse ansehen
-
-1. Scan läuft (~2-3 Minuten)
-2. Öffne: https://sonarcloud.io
-3. Navigiere zu deinem Projekt
-4. Erkunde: Issues, Security Hotspots, Code Smells
 
 ---
 
@@ -249,46 +248,3 @@ mvn clean verify sonar:sonar ^
    - New Bugs > 0 → Failed
 4. **Auf Projekt anwenden**
 5. **Re-Scan → Status prüfen**
-
-**Diskussion:**
-- Würdet ihr das in eurem Team nutzen?
-- Zu strikt oder zu locker?
-- Welche Bedingungen sind wichtig?
-
----
-
-## 📂 Projekt-Struktur
-
-```
-ecommerce-app/
-├── pom.xml                          # Maven Dependencies
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/ecommerce/
-│   │   │   ├── Application.java                # Main
-│   │   │   ├── controller/                     # Presentation
-│   │   │   │   ├── UserController.java         
-│   │   │   │   └── OrderController.java        
-│   │   │   ├── service/                        # Business
-│   │   │   │   ├── UserService.java            
-│   │   │   │   └── OrderService.java
-│   │   │   ├── repository/                     # Persistance
-│   │   │   │   ├── UserRepository.java         
-│   │   │   │   └── OrderRepository.java
-│   │   │   └── domain/                         # Domain/Entity
-│   │   │       ├── User.java                   
-│   │   │       ├── Order.java
-│   │   │       └── OrderStatus.java            # Enum
-│   │   └── resources/
-│   │       ├── application.properties          # Config
-│   │       └── import.sql                      # Demo Data
-│   └── test/
-│       └── java/                               # Tests
-└── README.md                                   
-```
-
-## 📚 Weiterführende Links
-
-- [SonarCloud Dokumentation](https://docs.sonarcloud.io)
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [SonarQube for IDE](https://www.sonarsource.com/products/sonarlint/)
