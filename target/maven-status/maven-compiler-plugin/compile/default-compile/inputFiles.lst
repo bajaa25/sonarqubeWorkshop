@@ -1,0 +1,11 @@
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/controller/OrderController.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/domain/Order.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/controller/UserController.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/service/OrderService.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/domain/User.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/repository/UserRepository.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/ECommerceShop.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/config/AppConfig.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/repository/OrderRepository.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/service/UserService.java
+/Users/ibrahimbouriga/E-Commerce-Shop/src/main/java/ecommerce/domain/OrderStatus.java

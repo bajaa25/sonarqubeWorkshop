@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: ecommerce.service.UserControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.144 s <<< FAILURE! - in ecommerce.service.UserControllerTest
+ecommerce.service.UserControllerTest  Time elapsed: 0.143 s  <<< ERROR!
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 69
+Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 69
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+

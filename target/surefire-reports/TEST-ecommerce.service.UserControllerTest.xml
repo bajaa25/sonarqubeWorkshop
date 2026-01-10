@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ecommerce.service.UserControllerTest" time="0.144" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="25"/>
+    <property name="jdk.extensions.version" value="25.0.1.0"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes:/Users/ibrahimbouriga/E-Commerce-Shop/target/classes:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.6.15/spring-boot-starter-web-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter/2.6.15/spring-boot-starter-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot/2.6.15/spring-boot-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.6.15/spring-boot-autoconfigure-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.6.15/spring-boot-starter-logging-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/ch/qos/logback/logback-classic/1.2.12/logback-classic-1.2.12.jar:/Users/ibrahimbouriga/.m2/repository/ch/qos/logback/logback-core/1.2.12/logback-core-1.2.12.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.17.2/log4j-to-slf4j-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/ibrahimbouriga/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.6.15/spring-boot-starter-json-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.5/jackson-databind-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.5/jackson-datatype-jdk8-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.5/jackson-datatype-jsr310-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.5/jackson-module-parameter-names-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.6.15/spring-boot-starter-tomcat-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.75/tomcat-embed-core-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.75/tomcat-embed-el-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.75/tomcat-embed-websocket-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-web/5.3.27/spring-web-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-beans/5.3.27/spring-beans-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-webmvc/5.3.27/spring-webmvc-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-aop/5.3.27/spring-aop-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-context/5.3.27/spring-context-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-expression/5.3.27/spring-expression-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/2.6.15/spring-boot-starter-data-jpa-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.6.15/spring-boot-starter-aop-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/aspectj/aspectjweaver/1.9.7/aspectjweaver-1.9.7.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.6.15/spring-boot-starter-jdbc-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-jdbc/5.3.27/spring-jdbc-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/transaction/jakarta.transaction-api/1.3.3/jakarta.transaction-api-1.3.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar:/Users/ibrahimbouriga/.m2/repository/org/hibernate/hibernate-core/5.6.15.Final/hibernate-core-5.6.15.Final.jar:/Users/ibrahimbouriga/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/Users/ibrahimbouriga/.m2/repository/net/bytebuddy/byte-buddy/1.11.22/byte-buddy-1.11.22.jar:/Users/ibrahimbouriga/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/ibrahimbouriga/.m2/repository/org/jboss/jandex/2.4.2.Final/jandex-2.4.2.Final.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/ibrahimbouriga/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.2.Final/hibernate-commons-annotations-5.1.2.Final.jar:/Users/ibrahimbouriga/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.8/jaxb-runtime-2.3.8.jar:/Users/ibrahimbouriga/.m2/repository/org/glassfish/jaxb/txw2/2.3.8/txw2-2.3.8.jar:/Users/ibrahimbouriga/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.12/istack-commons-runtime-3.0.12.jar:/Users/ibrahimbouriga/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/data/spring-data-jpa/2.6.10/spring-data-jpa-2.6.10.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/data/spring-data-commons/2.6.10/spring-data-commons-2.6.10.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-orm/5.3.27/spring-orm-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-tx/5.3.27/spring-tx-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-aspects/5.3.27/spring-aspects-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/com/h2database/h2/1.4.200/h2-1.4.200.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/2.6.15/spring-boot-starter-log4j2-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.17.2/log4j-slf4j-impl-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-jul/2.17.2/log4j-jul-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/slf4j/jul-to-slf4j/1.7.36/jul-to-slf4j-1.7.36.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.6.15/spring-boot-starter-test-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-test/2.6.15/spring-boot-test-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.6.15/spring-boot-test-autoconfigure-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/Users/ibrahimbouriga/.m2/repository/net/minidev/json-smart/2.4.10/json-smart-2.4.10.jar:/Users/ibrahimbouriga/.m2/repository/net/minidev/accessors-smart/2.4.9/accessors-smart-2.4.9.jar:/Users/ibrahimbouriga/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.jar:/Users/ibrahimbouriga/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/mockito/mockito-core/4.0.0/mockito-core-4.0.0.jar:/Users/ibrahimbouriga/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.22/byte-buddy-agent-1.11.22.jar:/Users/ibrahimbouriga/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/ibrahimbouriga/.m2/repository/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.jar:/Users/ibrahimbouriga/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/ibrahimbouriga/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-core/5.3.27/spring-core-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-jcl/5.3.27/spring-jcl-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-test/5.3.27/spring-test-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/xmlunit/xmlunit-core/2.8.4/xmlunit-core-2.8.4.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse OpenJ9"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="com.ibm.oti.vm.library.version" value="29"/>
+    <property name="java.vendor.url" value="https://www.ibm.com/semeru-runtimes"/>
+    <property name="jfr.unsupported.vm" value="true"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib/default:/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ibrahimbouriga/E-Commerce-Shop/target/surefire/surefirebooter8232613539061339137.jar /Users/ibrahimbouriga/E-Commerce-Shop/target/surefire 2026-01-10T16-36-34_832-jvmRun1 surefire10170708455426074678tmp surefire_011602629513708818357tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes:/Users/ibrahimbouriga/E-Commerce-Shop/target/classes:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.6.15/spring-boot-starter-web-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter/2.6.15/spring-boot-starter-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot/2.6.15/spring-boot-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.6.15/spring-boot-autoconfigure-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.6.15/spring-boot-starter-logging-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/ch/qos/logback/logback-classic/1.2.12/logback-classic-1.2.12.jar:/Users/ibrahimbouriga/.m2/repository/ch/qos/logback/logback-core/1.2.12/logback-core-1.2.12.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.17.2/log4j-to-slf4j-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/ibrahimbouriga/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.6.15/spring-boot-starter-json-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.5/jackson-databind-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.5/jackson-datatype-jdk8-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.5/jackson-datatype-jsr310-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.5/jackson-module-parameter-names-2.13.5.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.6.15/spring-boot-starter-tomcat-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.75/tomcat-embed-core-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.75/tomcat-embed-el-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.75/tomcat-embed-websocket-9.0.75.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-web/5.3.27/spring-web-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-beans/5.3.27/spring-beans-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-webmvc/5.3.27/spring-webmvc-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-aop/5.3.27/spring-aop-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-context/5.3.27/spring-context-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-expression/5.3.27/spring-expression-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/2.6.15/spring-boot-starter-data-jpa-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.6.15/spring-boot-starter-aop-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/aspectj/aspectjweaver/1.9.7/aspectjweaver-1.9.7.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.6.15/spring-boot-starter-jdbc-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-jdbc/5.3.27/spring-jdbc-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/transaction/jakarta.transaction-api/1.3.3/jakarta.transaction-api-1.3.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar:/Users/ibrahimbouriga/.m2/repository/org/hibernate/hibernate-core/5.6.15.Final/hibernate-core-5.6.15.Final.jar:/Users/ibrahimbouriga/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/Users/ibrahimbouriga/.m2/repository/net/bytebuddy/byte-buddy/1.11.22/byte-buddy-1.11.22.jar:/Users/ibrahimbouriga/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/ibrahimbouriga/.m2/repository/org/jboss/jandex/2.4.2.Final/jandex-2.4.2.Final.jar:/Users/ibrahimbouriga/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/ibrahimbouriga/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.2.Final/hibernate-commons-annotations-5.1.2.Final.jar:/Users/ibrahimbouriga/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.8/jaxb-runtime-2.3.8.jar:/Users/ibrahimbouriga/.m2/repository/org/glassfish/jaxb/txw2/2.3.8/txw2-2.3.8.jar:/Users/ibrahimbouriga/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.12/istack-commons-runtime-3.0.12.jar:/Users/ibrahimbouriga/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/data/spring-data-jpa/2.6.10/spring-data-jpa-2.6.10.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/data/spring-data-commons/2.6.10/spring-data-commons-2.6.10.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-orm/5.3.27/spring-orm-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-tx/5.3.27/spring-tx-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-aspects/5.3.27/spring-aspects-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/com/h2database/h2/1.4.200/h2-1.4.200.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/2.6.15/spring-boot-starter-log4j2-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.17.2/log4j-slf4j-impl-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-jul/2.17.2/log4j-jul-2.17.2.jar:/Users/ibrahimbouriga/.m2/repository/org/slf4j/jul-to-slf4j/1.7.36/jul-to-slf4j-1.7.36.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.6.15/spring-boot-starter-test-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-test/2.6.15/spring-boot-test-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.6.15/spring-boot-test-autoconfigure-2.6.15.jar:/Users/ibrahimbouriga/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/Users/ibrahimbouriga/.m2/repository/net/minidev/json-smart/2.4.10/json-smart-2.4.10.jar:/Users/ibrahimbouriga/.m2/repository/net/minidev/accessors-smart/2.4.9/accessors-smart-2.4.9.jar:/Users/ibrahimbouriga/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/ibrahimbouriga/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.jar:/Users/ibrahimbouriga/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/ibrahimbouriga/.m2/repository/org/mockito/mockito-core/4.0.0/mockito-core-4.0.0.jar:/Users/ibrahimbouriga/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.22/byte-buddy-agent-1.11.22.jar:/Users/ibrahimbouriga/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/ibrahimbouriga/.m2/repository/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.jar:/Users/ibrahimbouriga/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/ibrahimbouriga/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-core/5.3.27/spring-core-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-jcl/5.3.27/spring-jcl-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/springframework/spring-test/5.3.27/spring-test-5.3.27.jar:/Users/ibrahimbouriga/.m2/repository/org/xmlunit/xmlunit-core/2.8.4/xmlunit-core-2.8.4.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ibrahimbouriga"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="openjdk.methodhandles" value="true"/>
+    <property name="jdk.extensions.name" value="Extensions for OpenJDK for Eclipse OpenJ9"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/ibrahimbouriga/E-Commerce-Shop"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ibrahimbouriga/E-Commerce-Shop/target/surefire/surefirebooter8232613539061339137.jar"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib/default:/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.fullversion" value="25.0.1+8-LTS&#10;JRE 25 Mac OS X aarch64-64-Bit 20251021_68 (JIT enabled, AOT enabled)&#10;OpenJ9   - 14b3b2de26&#10;OMR      - d4c7e3040&#10;JCL      - 0fb10165067 based on jdk-25.0.1+8"/>
+    <property name="java.runtime.version" value="25.0.1+8-LTS"/>
+    <property name="user.name" value="ibrahimbouriga"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="26.1"/>
+    <property name="java.runtime.name" value="IBM Semeru Runtime Certified Edition"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Eclipse OpenJ9 VM"/>
+    <property name="openj9.compiler" value="j9jit29"/>
+    <property name="java.vendor.version" value="25.0.1.0"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="localRepository" value="/Users/ibrahimbouriga/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/ibmruntimes/Semeru-Runtimes/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/58/sw5fhtv55qs_8bq9710wkqzm0000gn/T/"/>
+    <property name="java.version" value="25.0.1"/>
+    <property name="com.ibm.system.agent.path" value="/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib"/>
+    <property name="user.dir" value="/Users/ibrahimbouriga/E-Commerce-Shop"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="org.eclipse.openj9.jfr.isJFREnabled" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="os.encoding" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib/default:/Library/Java/JavaVirtualMachines/jdk-25.0.1+8/Contents/Home/lib:/usr/lib"/>
+    <property name="java.vm.info" value="JRE 25 Mac OS X aarch64-64-Bit 20251021_68 (JIT enabled, AOT enabled)&#10;OpenJ9   - 14b3b2de26&#10;OMR      - d4c7e3040&#10;JCL      - 0fb10165067 based on jdk-25.0.1+8"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="IBM Corporation"/>
+    <property name="java.vm.version" value="25.0.1+8-openj9-0.56.0"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="ibm.system.encoding" value="UTF-8"/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="java.lang.invoke.VarHandle.VAR_HANDLE_GUARDS" value="false"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="ecommerce.service.UserControllerTest" classname="ecommerce.service.UserControllerTest" time="0.143">
+    <error message="Failed to read candidate component class: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn&apos;t supported yet: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 69" type="org.springframework.beans.factory.BeanDefinitionStoreException">org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 69
+Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [/Users/ibrahimbouriga/E-Commerce-Shop/target/test-classes/ecommerce/service/UserControllerTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 69
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+</error>
+    <system-out><![CDATA[16:36:35.888 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:36:35.893 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:36:35.919 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ecommerce.service.UserControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:36:35.926 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ecommerce.service.UserControllerTest], using SpringBootContextLoader
+16:36:35.929 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ecommerce.service.UserControllerTest]: class path resource [ecommerce/service/UserControllerTest-context.xml] does not exist
+16:36:35.929 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ecommerce.service.UserControllerTest]: class path resource [ecommerce/service/UserControllerTestContext.groovy] does not exist
+16:36:35.929 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ecommerce.service.UserControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:36:35.929 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ecommerce.service.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:36:35.955 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ecommerce.service.UserControllerTest]
+]]></system-out>
+    <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting ecommerce/service/UserControllerTest with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:94)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:257)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:594)
+	at java.base/java.lang.ClassLoader.defineClassImpl(Native Method)
+	at java.base/java.lang.ClassLoader.defineClassInternal(ClassLoader.java:448)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:409)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:1075)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:879)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:794)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:752)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:1042)
+	at org.apache.maven.surefire.util.DefaultScanResult.loadClass(DefaultScanResult.java:136)
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:100)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:143)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.io.IOException: Error while instrumenting ecommerce/service/UserControllerTest with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:111)
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:92)
+	... 20 more
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:200)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:180)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:166)
+	at org.jacoco.agent.rt.internal_4742761.core.internal.instr.InstrSupport.classReaderFor(InstrSupport.java:280)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:77)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:109)
+	... 21 more
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting ecommerce/domain/User with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:94)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:257)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:594)
+	at java.base/java.lang.ClassLoader.defineClassImpl(Native Method)
+	at java.base/java.lang.ClassLoader.defineClassInternal(ClassLoader.java:448)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:409)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:1075)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:879)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:794)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:752)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:1042)
+	at java.base/java.lang.Class.getDeclaredMethodsImpl(Native Method)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:1022)
+	at org.junit.platform.commons.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:1492)
+	at org.junit.platform.commons.util.ReflectionUtils.findMethod(ReflectionUtils.java:1341)
+	at org.junit.platform.commons.util.ReflectionUtils.isMethodPresent(ReflectionUtils.java:1242)
+	at org.junit.jupiter.engine.discovery.predicates.IsTestClassWithTests.hasTestOrTestFactoryOrTestTemplateMethods(IsTestClassWithTests.java:50)
+	at org.junit.jupiter.engine.discovery.predicates.IsTestClassWithTests.test(IsTestClassWithTests.java:46)
+	at org.junit.jupiter.engine.discovery.ClassSelectorResolver.resolve(ClassSelectorResolver.java:67)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.lambda$resolve$2(EngineDiscoveryRequestResolution.java:134)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1693)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:601)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:587)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:573)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:270)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:185)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:125)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolveCompletely(EngineDiscoveryRequestResolution.java:91)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.run(EngineDiscoveryRequestResolution.java:82)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolver.resolve(EngineDiscoveryRequestResolver.java:113)
+	at org.junit.jupiter.engine.discovery.DiscoverySelectorResolver.resolveSelectors(DiscoverySelectorResolver.java:46)
+	at org.junit.jupiter.engine.JupiterTestEngine.discover(JupiterTestEngine.java:69)
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:168)
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:155)
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:120)
+	at org.apache.maven.surefire.junitplatform.TestPlanScannerFilter.accept(TestPlanScannerFilter.java:56)
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:102)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:143)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.io.IOException: Error while instrumenting ecommerce/domain/User with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:111)
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:92)
+	... 48 more
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:200)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:180)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:166)
+	at org.jacoco.agent.rt.internal_4742761.core.internal.instr.InstrSupport.classReaderFor(InstrSupport.java:280)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:77)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:109)
+	... 49 more
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting ecommerce/service/UserServiceTest with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:94)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:257)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:594)
+	at java.base/java.lang.ClassLoader.defineClassImpl(Native Method)
+	at java.base/java.lang.ClassLoader.defineClassInternal(ClassLoader.java:448)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:409)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:1075)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:879)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:794)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:752)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:1042)
+	at org.apache.maven.surefire.util.DefaultScanResult.loadClass(DefaultScanResult.java:136)
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:100)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:143)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.io.IOException: Error while instrumenting ecommerce/service/UserServiceTest with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:111)
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:92)
+	... 20 more
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:200)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:180)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:166)
+	at org.jacoco.agent.rt.internal_4742761.core.internal.instr.InstrSupport.classReaderFor(InstrSupport.java:280)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:77)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:109)
+	... 21 more
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting ecommerce/controller/UserController with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:94)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:257)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:594)
+	at java.base/java.lang.ClassLoader.defineClassImpl(Native Method)
+	at java.base/java.lang.ClassLoader.defineClassInternal(ClassLoader.java:448)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:409)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:1075)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:879)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:794)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:752)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:1042)
+	at java.base/java.lang.Class.getDeclaredFieldsImpl(Native Method)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:847)
+	at org.junit.platform.commons.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:1470)
+	at org.junit.platform.commons.util.ReflectionUtils.findAllFieldsInHierarchy(ReflectionUtils.java:1200)
+	at org.junit.platform.commons.util.ReflectionUtils.findFields(ReflectionUtils.java:1188)
+	at org.junit.jupiter.engine.descriptor.ExtensionUtils.registerExtensionsFromFields(ExtensionUtils.java:96)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.prepare(ClassBasedTestDescriptor.java:150)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.prepare(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.io.IOException: Error while instrumenting ecommerce/controller/UserController with JaCoCo 0.8.11.202310140853/f33756c.
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:111)
+	at org.jacoco.agent.rt.internal_4742761.CoverageTransformer.transform(CoverageTransformer.java:92)
+	... 48 more
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 69
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:200)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:180)
+	at org.jacoco.agent.rt.internal_4742761.asm.ClassReader.<init>(ClassReader.java:166)
+	at org.jacoco.agent.rt.internal_4742761.core.internal.instr.InstrSupport.classReaderFor(InstrSupport.java:280)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:77)
+	at org.jacoco.agent.rt.internal_4742761.core.instr.Instrumenter.instrument(Instrumenter.java:109)
+	... 49 more
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/ibrahimbouriga/.m2/repository/ch/qos/logback/logback-classic/1.2.12/logback-classic-1.2.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/ibrahimbouriga/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.17.2/log4j-slf4j-impl-2.17.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+]]></system-err>
+  </testcase>
+</testsuite>

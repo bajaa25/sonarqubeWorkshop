@@ -1,0 +1,12 @@
+ecommerce/domain/OrderStatus.class
+ecommerce/service/UserService.class
+ecommerce/domain/User.class
+ecommerce/domain/Order.class
+ecommerce/controller/CreateOrderRequest.class
+ecommerce/ECommerceShop.class
+ecommerce/controller/UserController.class
+ecommerce/repository/OrderRepository.class
+ecommerce/repository/UserRepository.class
+ecommerce/config/AppConfig.class
+ecommerce/controller/OrderController.class
+ecommerce/service/OrderService.class
