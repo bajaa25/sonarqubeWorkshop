@@ -89,7 +89,7 @@ public class UserService {
         User user = userRepository.findById(userId).orElse(null);
         if (user == null) {
             logger.error("No User Found");
-            throw new Error("No User Found");
+            throw new RuntimeException("No User Found");
         }
         return user.getFirstName() + " " + user.getLastName();
     }

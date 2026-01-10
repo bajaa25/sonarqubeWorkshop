@@ -62,7 +62,7 @@ public class OrderService {
 
         if (user == null) {
             logger.error("No User Found");
-            throw new Error("No User Found");
+            throw new RuntimeException("No User Found");
         }
 
         Order order = new Order();
@@ -109,6 +109,7 @@ public class OrderService {
                 orderRepository.save(order);
             }
         } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 
