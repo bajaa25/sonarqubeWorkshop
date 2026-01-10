@@ -54,23 +54,24 @@ public class UserService {
     }
 
     public boolean validateUser(User user) {
-        if (user != null) {
-            if (user.getEmail() != null) {
-                if (user.getEmail().contains("@")) {
-                    if (user.getPassword() != null) {
-                        if (user.getPassword().length() >= 8) {
-                            if (!user.getPassword().equals("password")) {
-                                if (!user.getPassword().equals("123456")) {
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        if (user == null) {
+            return false;
         }
-        return false;
+
+        String email = user.getEmail();
+        String password = user.getPassword();
+
+        if (email == null || !email.contains("@")) {
+            return false;
+        }
+
+        if (password == null || password.length() < 8) {
+            return false;
+        }
+
+        return !password.equals("password") && !password.equals("123456");
     }
+
 
     public boolean isPasswordValid(String password) {
         if (password != null && password.length() >= 4) {
