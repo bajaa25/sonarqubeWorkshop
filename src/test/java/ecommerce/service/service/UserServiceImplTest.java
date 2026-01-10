@@ -2,7 +2,6 @@ package ecommerce.service.service;
 
 import ecommerce.domain.User;
 import ecommerce.dto.CreateUserRequest;
-import ecommerce.repository.UserRepository;
 import ecommerce.service.IUserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -188,12 +187,13 @@ class UserServiceImplTest {
     }
 
     @Test
-    @Transactional  // Keeps session open
+    @Transactional
     void testIsEligibleForPremium() {
         User user = userService.getUserById(1L).get();
-        boolean eligible = userService.isEligibleForPremium(user);
-        // Just check it doesn't throw exception
-        assertNotNull(eligible);
+
+        assertDoesNotThrow(() ->
+                userService.isEligibleForPremium(user)
+        );
     }
 
     @Test
