@@ -2,8 +2,13 @@ package ecommerce.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * User Entity
+ * Fixed: Private fields, immutable collection return
+ */
 @Entity
 @Table(name = "users")
 public class User {
@@ -13,7 +18,7 @@ public class User {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    public String email;
+    private String email;
 
     private String password;
     private String firstName;
@@ -75,11 +80,17 @@ public class User {
         this.premium = premium;
     }
 
+    // Fixed: Returns unmodifiable list
     public List<Order> getOrders() {
-        return orders;
+        return Collections.unmodifiableList(orders);
     }
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public void addOrder(Order order) {
+        this.orders.add(order);
+        order.setUser(this);
     }
 }

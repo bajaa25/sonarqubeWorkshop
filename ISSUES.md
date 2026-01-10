@@ -372,13 +372,13 @@ private double calculateTotal(double price, int quantity, boolean isPremium) {
 
 **Überall im Code:**
 ```java
-// UserService.java
+// IUserService.java
 if (orderCount < 5) return "Bronze";      // ❌ Magic 5
 if (orderCount < 10) return "Silver";     // ❌ Magic 10
 if (orderCount < 20) return "Gold";       // ❌ Magic 20
 if (totalSpent >= 1000) return true;      // ❌ Magic 1000
 
-// OrderService.java
+// IOrderService.java
 if (quantity > 5) ...                     // ❌ Magic 5
 if (total > 100) ...                      // ❌ Magic 100
 total = total * 0.85;                     // ❌ Magic 0.85
